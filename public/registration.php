@@ -9,7 +9,7 @@ if (isset($_POST['Submit'])) {
     $new_user = [
         'Username' => clean($_POST['Username']),
         'Email' => clean($_POST['Email']),
-        'Password' => password_hash(clean($_POST['Password']), PASSWORD_DEFAULT)
+        'Password' => clean($_POST['Password'])
     ];
 
     try {

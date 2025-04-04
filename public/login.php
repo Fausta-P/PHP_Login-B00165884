@@ -47,7 +47,7 @@ if(isset($_POST['Submit'])){
         $stmt->execute(['username' => $username]);
         $user = $stmt->fetch();
 
-        if ($user && password_verify($password, $user['Password'])) {
+        if ($user && $user['Password'] === $password) {
             $_SESSION['Username'] = $username;
             $_SESSION['Active'] = true;
             header('Location: index.php');
